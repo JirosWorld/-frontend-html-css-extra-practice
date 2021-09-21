@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    padding: 16px;
+}
+.container {
+    display: grid;
+    width: 900px;
+    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 213px);
+    /* 900 - 16padd - 16padd - 16gap = 852 is de maximaal beschikbare binnenruimte, */
+    /* 852/4= 213 ruimte per 1 van de 4 kolommen */
+    grid-template-areas:
+            ". . . i-1"
+            "twee twee i-3 ."
+            "twee twee i-4 i-5"
+            ". . . ."
+            ". i-6 zeven zeven"
+            "i-8 i-9 zeven zeven"
+            "i-10 . . .";
+    background-color: hsl(212, 36%, 90%);
+}
+.grid-item {
+    background-color: hsl(212, 43%, 65%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* define all grid area names */
+.i-1 {
+    grid-area: i-1;
+}
+.i-2 {
+    grid-area: twee;
+    background-color: hsl(208, 48%, 47%);
+}
+.i-3 {
+    grid-area: i-3;
+}
+.i-4 {
+    grid-area: i-4;
+}
+.i-5 {
+    grid-area: i-5;
+}
+.i-6 {
+    grid-area: i-6;
+}
+.i-7 {
+    grid-area: zeven;
+    background-color: hsl(208, 48%, 47%);
+}
+.i-8 {
+    grid-area: i-8;
+}
+.i-9 {
+    grid-area: i-9;
+}
+.i-10 {
+    grid-area: i-10;
+}

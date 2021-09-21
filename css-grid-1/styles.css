@@ -1,0 +1,65 @@
+body {
+    background-color: hsl(212, 36%, 90%);
+    color: white;
+    margin: 0;
+    padding: 0;
+    max-height: 750px;
+    box-sizing: border-box;
+}
+/* mobile first styles */
+.container {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
+    /*grid-template-columns: 1fr;*/ /*niet nodig?*/
+    grid-template-rows: 150px 50px 50px auto 150px;
+    grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e";
+}
+.grid-item {
+    /* give all grid items the same bg color */
+    background-color: hsl(212, 43%, 65%);
+    padding: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*grid-column: 1 / span 6; */
+    /* dit werkt niet voor mobile */
+}
+/* define all grid area names */
+.a {
+    grid-area: a;
+}
+.b {
+    grid-area: b;
+}
+.c {
+    grid-area: c;
+}
+.d {
+    grid-area: d;
+}
+.e {
+    grid-area: e;
+}
+
+/* set media queries for larger screens */
+@media screen and (min-width: 768px) {
+    .container {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 400px 150px;
+        grid-template-areas:
+            "a a a b b b"
+            "c d d d d d"
+            "e e e e e e";
+    }
+    .grid-item {
+        width: initial; /* for desktop */
+    }
+}
